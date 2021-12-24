@@ -6,6 +6,13 @@ export default function App() {
     <div className="App">
       <h1>Dictionary</h1>
       <Dictionary />
+      <footer>
+        {" "}
+        <a href="https://github.com/nathaliebru/react-dictionary-project">
+          Open-source coded
+        </a>{" "}
+        by Nathalie Bruinhof
+      </footer>
     </div>
   );
 }
