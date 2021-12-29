@@ -1,8 +1,14 @@
 .App {
+  color: #fff;
+  font-family: "Merriweather", serif;
+}
+
+.App h1 {
   text-align: center;
 }
 
 .App footer {
+  text-align: center;
   margin: 20px;
-  font-size: 12px;
+  font-size: 11px;
 }
