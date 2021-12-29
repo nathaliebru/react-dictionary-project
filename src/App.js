@@ -8,7 +8,11 @@ export default function App() {
       <Dictionary />
       <footer>
         {" "}
-        <a href="https://github.com/nathaliebru/react-dictionary-project">
+        <a
+          href="https://github.com/nathaliebru/react-dictionary-project"
+          target="_blank"
+          rel="noreferrer"
+        >
           Open-source coded
         </a>{" "}
         by Nathalie Bruinhof
