@@ -8,18 +8,20 @@ export default function Results(props) {
     return (
       <div className="Results">
         <section>
-          <div className="row">
-            <div className="col-md-6">
-              <h2>{props.results.word}</h2>
-            </div>
-            <div className="col-md-6">
-              {props.results.phonetics.map(function (phonetic, index) {
-                return (
-                  <div key={index}>
-                    <Phonetics phonetics={phonetic} />
-                  </div>
-                );
-              })}
+          <div className="container">
+            <div className="row justify-content-between">
+              <div className="col-sm-4">
+                <h2>{props.results.word}</h2>
+              </div>
+              <div className="col-sm-3 text-center">
+                {props.results.phonetics.map(function (phonetic, index) {
+                  return (
+                    <div key={index}>
+                      <Phonetics phonetics={phonetic} />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
