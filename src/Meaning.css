@@ -1,0 +1,21 @@
+.Meaning .part-of-speech {
+  border-right: 1px solid #fff;
+}
+
+.Meaning h3 {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.Meaning .definition {
+  line-height: 1.5;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.Meaning .example {
+  font-size: 12px;
+  opacity: 70%;
+  font-style: italic;
+}

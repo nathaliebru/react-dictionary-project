@@ -2,10 +2,15 @@
   margin-top: 30px;
   color: #fff;
   font-family: "Merriweather", serif;
+  text-align: center;
 }
 
 .App h1 {
-  text-align: center;
+  font-weight: 700;
+}
+
+.App h2 {
+  font-size: 20px;
 }
 
 .App footer {
