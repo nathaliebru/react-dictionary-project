@@ -18,3 +18,7 @@
   margin: 20px;
   font-size: 11px;
 }
+
+.App footer a {
+  color: #929292;
+}
