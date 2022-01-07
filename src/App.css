@@ -1,8 +1,9 @@
 .App {
-  margin-top: 30px;
+  margin: 30px auto 0;
   color: #fff;
   font-family: "Merriweather", serif;
   text-align: center;
+  max-width: 900px;
 }
 
 .App h1 {

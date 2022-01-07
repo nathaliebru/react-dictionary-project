@@ -7,7 +7,7 @@ export default function App() {
       <div className="container">
         <h1>English Dictionary</h1>
         <h2>What word do you want to look up?</h2>
-        <Dictionary />
+        <Dictionary defaultKeyword="coffee" />
         <footer>
           {" "}
           <a

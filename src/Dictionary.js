@@ -4,10 +4,11 @@ import Results from "./Results";
 import "./Dictionary.css";
 import Photos from "./Photos";
 
-export default function Dictionary() {
-  let [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [photos, setPhotos] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
   function handleDictionaryResponse(response) {
     setResults(response.data[0]);
@@ -17,9 +18,7 @@ export default function Dictionary() {
     setPhotos(response.data.photos);
   }
 
-  function search(event) {
-    event.preventDefault();
-
+  function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleDictionaryResponse);
 
@@ -34,14 +33,33 @@ export default function Dictionary() {
     setKeyword(event.target.value);
   }
 
-  return (
-    <div className="Dictionary">
-      <form onSubmit={search}>
-        <input type="search" onChange={handleKeyword} />
-      </form>
-      <div className="hint">i.e. coding, coffee, wine, fitness...</div>
-      <Results results={results} />
-      <Photos photos={photos} />
-    </div>
-  );
+  function load() {
+    setLoaded(true);
+    search();
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            onChange={handleKeyword}
+            defaultValue={"coffee"}
+          />
+        </form>
+        <div className="hint">i.e. coding, coffee, wine, fitness...</div>
+        <Results results={results} />
+        <Photos photos={photos} />
+      </div>
+    );
+  } else {
+    load();
+    return "Loading...";
+  }
 }
